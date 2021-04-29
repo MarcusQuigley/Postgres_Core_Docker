@@ -11,3 +11,16 @@ services:
         - 5432:5432
     # volumes:
     #   - tempapi_data:/var/lib/postgresql/data
+  items_api:
+    build: .
+    environment: 
+        POSTGRES_SERVER: "some_db_server"
+        POSTGRES_DB: "items_db"
+        POSTGRES_PORT: "5432"
+        POSTGRES_USER: "marcus"
+        POSTGRES_PASSWORD: "password"
+    ports: 
+      - "4170:80"
+    depends_on:
+      - some_db_server
+    #restart: always
