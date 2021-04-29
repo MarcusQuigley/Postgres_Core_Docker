@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  some_db_server:
+    image: postgres:alpine
+    environment: 
+        POSTGRES_DB: "items_db"
+        POSTGRES_USER: "marcus"
+        POSTGRES_PASSWORD: "password"
+    ports: 
+        - 5432:5432
+    # volumes:
+    #   - tempapi_data:/var/lib/postgresql/data

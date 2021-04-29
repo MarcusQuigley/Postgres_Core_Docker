@@ -63,6 +63,7 @@ namespace Postgres_Core_Docker
     {
         public static IServiceCollection AddADbContext(this IServiceCollection services, IConfiguration configuration)
         {
+            //psql -h localhost -U marcus -p 5432 -d items_db
             var server = configuration["POSTGRES_SERVER"];// ?? "localhost";
 
             var port = configuration["POSTGRES_PORT"];// ?? "5432";
